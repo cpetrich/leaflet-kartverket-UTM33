@@ -1,5 +1,5 @@
 # Leaflet Map with UTM33 CRS
-Here is a working example for getting [leaflet](https://leafletjs.com/) to produce a map with open WMTS tiles from [Kartverket](https://www.kartverket.no/) as seen on https://norgeskart.no/. That map uses the default projection of Norway, [EPSG:32633](https://epsg.io/32633) (UMT33), which differs from the leaflet default CRS [EPSG:3857](https://epsg.io/3857) (google projection). The code uses [proj4leaflet](https://github.com/kartena/Proj4Leaflet) (which depends on [proj4js](https://github.com/proj4js/proj4js)) to define the CRS.
+Here is a working example for getting [leaflet](https://leafletjs.com/) to produce a map with open WMTS tiles from [Kartverket](https://www.kartverket.no/), similar to https://norgeskart.no/ (The open WMTS tiles differ slightly in layout and shading and are distributed as paletted png files, which makes them smaller than the ones on norgeskart.no.) Norgeskart uses the default projection of Norway, [EPSG:32633](https://epsg.io/32633) (UMT33), which differs from the leaflet default CRS [EPSG:3857](https://epsg.io/3857) (google projection). The code uses [proj4leaflet](https://github.com/kartena/Proj4Leaflet) (which depends on [proj4js](https://github.com/proj4js/proj4js)) to define the CRS.
 
 Here we go, also see ``index.html`` for a working example:
 ```html
@@ -39,3 +39,4 @@ Here we go, also see ``index.html`` for a working example:
 ## Resources used
 - overview given by Tor Arve Stangeland at https://github.com/torarve/leaflet-kartverket (no license specified)
 - code snipplets for the UTM32 projection and the non-open Kartverket tile server by TomazicM at https://gis.stackexchange.com/a/307651 (CC-BY-SA 3.0 license)
+- GetCapabilities file of the WMTS server https://opencache.statkart.no/gatekeeper/gk/gk.open_wmts?Version=1.0.0&service=wmts&request=getcapabilities
