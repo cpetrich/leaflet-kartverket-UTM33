@@ -17,7 +17,7 @@ Here we go, also see ``index.html`` for a working example:
       const crsMaxZoom = 18;
       const crs = new L.Proj.CRS(crsStr, crsProj4,
                         { origin: crsTileOrg, 
-                          resolutions: Array.from(Array(crsMaxZoom+1),(e,zoomLevel) => crsBaseResolution/Math.pow(2,zoomLevel))
+                          resolutions: Array.from(Array(crsMaxZoom+2),(e,zoomLevel) => crsBaseResolution/Math.pow(2,zoomLevel))
                         });
       const map = L.map('map', {
           center: [68.44, 17.4], // Narvik, Norway
