@@ -11,12 +11,12 @@
   </head>
   <body>
     <div style="width: 100vw; height: 100vh" id="map"></div>
-    <!-- The Javascript code is licensed under the MIT license (c) Chris Petrich, 2021. SPDX short identifier: MIT -->
+    <!-- The Javascript code is licensed under the MIT license (c) Chris Petrich, 2021-2024. SPDX short identifier: MIT -->
     <script type="text/javascript">
       const crsStr = 'EPSG:25833';
       const crsProj4 = '+proj=utm +zone=33 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs';
       // The origin is the <TopLeftCorner> in the response to a GetCapabilities call to
-      // https://opencache.statkart.no/gatekeeper/gk/gk.open_wmts?Version=1.0.0&service=wmts&request=getcapabilities
+      // https://cache.kartverket.no/v1/wmts/1.0.0/WMTSCapabilities.xml
       const crsTileOrg = [-2500000, 9045984];
       // crsBaseResolution is the <ScaleDenominator> at zoom level 0 from the GetCapabilities call times 0.00028
       const crsBaseResolution = 21664;
@@ -31,11 +31,10 @@
           zoom: 13,
           crs: crs,
       });
-      // map tile IDs are the GetCapabilities <ows:Identifier>
-      const owsId = 'norgeskart_bakgrunn';
-      const url = 'https://opencache{s}.statkart.no/gatekeeper/gk/gk.open_wmts?&layer='+owsId+'&style=default&tilematrixset='+crsStr+'&Service=WMTS&Request=GetTile&Version=1.0.0&Format=image%2Fpng&TileMatrix='+crsStr+':{z}&TileCol={x}&TileRow={y}';
+      // ResourceURL for the selected ows:Tile ("topo") and TileMatrixSet ("utm33n")
+      const url = 'https://cache{s}.kartverket.no/v1/wmts/1.0.0/topo/default/utm33n/{z}/{y}/{x}.png';
       const kartverketTiles = L.tileLayer(url, {
-          subdomains: ['', '2', '3'],
+          subdomains: ['', '2', '3', '4'],
           maxZoom: crsMaxZoom,
           attribution: '<a href="https://www.kartverket.no/">Kartverket</a>',
       });
