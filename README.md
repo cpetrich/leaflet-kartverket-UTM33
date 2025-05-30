@@ -4,7 +4,7 @@ Here is a working example for getting [leaflet](https://leafletjs.com/) to produ
 Here we go, also see ``index.html`` for a working example:
 ```html
     <div style="width: 100vw; height: 100vh" id="map"></div>
-    <!-- The Javascript code is licensed under the MIT license (c) Chris Petrich, 2021-2024. SPDX short identifier: MIT -->
+    <!-- The Javascript code is licensed under the MIT license (c) Chris Petrich, 2021-2025. SPDX short identifier: MIT -->
     <script type="text/javascript">
       const crsStr = 'EPSG:25833';
       const crsProj4 = '+proj=utm +zone=33 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs';
@@ -27,7 +27,7 @@ Here we go, also see ``index.html`` for a working example:
       // ResourceURL for the selected ows:Tile ("topo") and TileMatrixSet ("utm33n")
       const url = 'https://cache{s}.kartverket.no/v1/wmts/1.0.0/topo/default/utm33n/{z}/{y}/{x}.png';
       const kartverketTiles = L.tileLayer(url, {
-          subdomains: ['', '2', '3', '4'],
+          subdomains: [''],
           maxZoom: crsMaxZoom,
           attribution: '<a href="https://www.kartverket.no/">Kartverket</a>',
       });
